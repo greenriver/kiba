@@ -78,7 +78,7 @@ module Kiba
         fail "Class and block form cannot be used together at the moment"
       elsif klass
         fail "Class form is not allowed here" unless allow_class
-        klass.new(*args)
+        klass.new(**args)
       elsif block
         fail "Block form is not allowed here" unless allow_block
         AliasingProc.new(&block)
